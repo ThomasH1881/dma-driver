@@ -45,6 +45,11 @@ hugetlbfs /media/huge hugetlbfs mode=1770,gid=1001 0 0
 
 5. Reboot
 
+6. Add the following line to `/etc/security/limits.conf` to configure the amount of memory a user can lock, so an application can't crash your operating system by locking all the memory. 
+```
+@hugetlbfs	hard	memlock		1048576
+```
+
 ## Build Example Application
 1. Install prerequisites, e.g. on Ubuntu install the following packages:
 ```
